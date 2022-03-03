@@ -39,9 +39,9 @@ app.get('/student/:id', (req, res) => {
     if (!error && response.statusCode == 200) {
       var obj = JSON.parse(body);
       if (id == 5) {
-        name = "Hello "+obj.firstName + " " + obj.lastName + ", You need to improve on your skills"
+        name = "Hello "+obj.firstName + " " + obj.lastName + ", You need to improve on your skills Set"
       } else {
-        name = "Hello "+obj.firstName + " " + obj.lastName + ", You are going to become a great DevOps Engineer"
+        name = "Hello "+obj.firstName + " " + obj.lastName + ", You are becoming a great DevOps Engineer"
         
       }
       
