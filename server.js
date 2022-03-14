@@ -23,7 +23,7 @@ app.get('/instructor/:id', (req, res) => {
   request(String(`http://${url}/instructor/${id}`), function (error, response, body) {
     if (!error && response.statusCode == 200) {
       var obj = JSON.parse(body);
-      name = "Hello Mr."+obj.firstName + " " + obj.lastName
+      name = "Hello "+obj.firstName + " " + obj.lastName
       res.send(name);
     }
   })
