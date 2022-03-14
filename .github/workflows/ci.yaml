@@ -16,9 +16,6 @@ jobs:
     defaults:
       run:
         shell: bash
-
-    - name: Check out code into the Go module directory
-      uses: actions/checkout@v2
     
     - name: Initialize Pipeline
       uses: mshick/add-pr-comment@v1
