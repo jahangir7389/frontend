@@ -2,6 +2,8 @@ name: CI
 
 on:
   pull_request:
+on:
+  push:
 
 env:
   IMAGE_NAME: frontend
@@ -16,6 +18,20 @@ jobs:
     defaults:
       run:
         shell: bash
+    #steps:
+    #- name: Set up Go 1.13
+     # uses: actions/setup-go@v1
+      #with:
+      #  go-version: 1.13
+     # id: go
+
+    - name: Check out code into the Go module directory
+      uses: actions/checkout@v2
+
+    - name: Build Code
+      run: |
+        go get github.com/thedevsaddam/renderer/...
+        go build -v .
     
     - name: Initialize Pipeline
       uses: mshick/add-pr-comment@v1
@@ -97,5 +113,3 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
-
-    
