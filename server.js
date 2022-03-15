@@ -23,7 +23,7 @@ app.get('/instructor/:id', (req, res) => {
   request(String(`http://${url}/instructor/${id}`), function (error, response, body) {
     if (!error && response.statusCode == 200) {
       var obj = JSON.parse(body);
-      name = "Hello "+obj.firstName + " " + obj.lastName
+      name = "Hello Mr"+obj.firstName + " " + obj.lastName
       res.send(name);
     }
   })
@@ -39,9 +39,9 @@ app.get('/student/:id', (req, res) => {
     if (!error && response.statusCode == 200) {
       var obj = JSON.parse(body);
       if (id == 5) {
-        name = "Hello "+obj.firstName + " " + obj.lastName + ", You need to improve on your skills Set"
+        name = "Hello Mr."+obj.firstName + " " + obj.lastName + ", You need to improve on your skills Set"
       } else {
-        name = "Hello Mr."+obj.firstName + " " + obj.lastName + ", You are becoming a great DevOps Engineer"
+        name = "Hello Mr."+obj.firstName + " " + obj.lastName + ", You are now becoming a great DevOps Engineer"
         
       }
       
