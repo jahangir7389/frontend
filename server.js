@@ -17,7 +17,7 @@ var request = require('request');
 app.get('/instructor/:id', (req, res) => {
   id = Number(req.params.id)
   let name = ""
-  let url  = "hub.docker.internal:8080";
+  let url  = "backend:8080";
   //let url  = process.env.BACKEND_URL;
   
   request(String(`http://${url}/instructor/${id}`), function (error, response, body) {
@@ -33,7 +33,7 @@ app.get('/instructor/:id', (req, res) => {
 app.get('/student/:id', (req, res) => {
   id = Number(req.params.id)
   let name = ""
-  let url  = "hub.docker.internal:8080";
+  let url  = "backend:8080";
   // let url  = process.env.BACKEND_URL;
   request(String(`http://${url}/student/${id}`), function (error, response, body) {
     if (!error && response.statusCode == 200) {
